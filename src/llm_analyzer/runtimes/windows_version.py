@@ -4,7 +4,7 @@ import ctypes as ct
 def file_version(path: str) -> str | None:
     """Read local PE version metadata without launching Ollama or contacting its daemon."""
     try:
-        dll = ct.WinDLL("version.dll", winmode=0x800)
+        dll = ct.WinDLL("version.dll", winmode=0x800)  # type: ignore[attr-defined]
         dll.GetFileVersionInfoSizeW.argtypes = [ct.c_wchar_p, ct.POINTER(ct.c_uint32)]
         dll.GetFileVersionInfoSizeW.restype = ct.c_uint32
         dll.GetFileVersionInfoW.argtypes = [ct.c_wchar_p, ct.c_uint32, ct.c_uint32, ct.c_void_p]
