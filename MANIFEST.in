@@ -1,0 +1,7 @@
+include LICENSE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
+recursive-include src/llm_analyzer/data *.json
+recursive-include tests *.py *.json
+recursive-include scripts *.py *.ps1
+recursive-include packaging *.py *.spec
+recursive-include docs *.md *.toml *.json
+recursive-include .github *.yml

@@ -1,0 +1,666 @@
+{
+  "$defs": {
+    "BackendInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/Status",
+          "default": "unknown"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "source": {
+          "default": "not probed",
+          "title": "Source",
+          "type": "string"
+        },
+        "confidence": {
+          "default": "unknown",
+          "title": "Confidence",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "title": "BackendInfo",
+      "type": "object"
+    },
+    "CPUInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "vendor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Vendor"
+        },
+        "brand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brand"
+        },
+        "architecture": {
+          "default": "unknown",
+          "title": "Architecture",
+          "type": "string"
+        },
+        "physical_cores": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Physical Cores"
+        },
+        "logical_cores": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Logical Cores"
+        },
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "flags_known": {
+          "default": false,
+          "title": "Flags Known",
+          "type": "boolean"
+        },
+        "frequency_mhz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frequency Mhz"
+        },
+        "evidence": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "object"
+        }
+      },
+      "title": "CPUInfo",
+      "type": "object"
+    },
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence",
+          "default": "unknown"
+        },
+        "status": {
+          "$ref": "#/$defs/Status",
+          "default": "unknown"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "GPUInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "minimum": 0,
+          "title": "Index",
+          "type": "integer"
+        },
+        "vendor": {
+          "title": "Vendor",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "dedicated_vram_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dedicated Vram Bytes"
+        },
+        "free_vram_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Free Vram Bytes"
+        },
+        "used_vram_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Used Vram Bytes"
+        },
+        "shared_memory_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shared Memory Bytes"
+        },
+        "driver_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Driver Version"
+        },
+        "compute_capability": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Compute Capability"
+        },
+        "gpu_type": {
+          "default": "unknown",
+          "title": "Gpu Type",
+          "type": "string"
+        },
+        "evidence": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "object"
+        }
+      },
+      "required": [
+        "index",
+        "vendor",
+        "name"
+      ],
+      "title": "GPUInfo",
+      "type": "object"
+    },
+    "MemoryInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "total_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Bytes"
+        },
+        "available_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Available Bytes"
+        },
+        "used_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Used Bytes"
+        },
+        "utilization_percent": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Utilization Percent"
+        },
+        "swap_total_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Swap Total Bytes"
+        },
+        "swap_free_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Swap Free Bytes"
+        },
+        "evidence": {
+          "$ref": "#/$defs/Evidence"
+        }
+      },
+      "title": "MemoryInfo",
+      "type": "object"
+    },
+    "PlatformInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "os": {
+          "default": "unknown",
+          "title": "Os",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "build": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Build"
+        },
+        "edition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Edition"
+        },
+        "architecture": {
+          "default": "unknown",
+          "title": "Architecture",
+          "type": "string"
+        },
+        "machine_architecture": {
+          "default": "unknown",
+          "title": "Machine Architecture",
+          "type": "string"
+        },
+        "manufacturer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Manufacturer"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        }
+      },
+      "title": "PlatformInfo",
+      "type": "object"
+    },
+    "RuntimeInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "installed": {
+          "default": false,
+          "title": "Installed",
+          "type": "boolean"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "status": {
+          "$ref": "#/$defs/Status",
+          "default": "not_available"
+        },
+        "backends": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Backends",
+          "type": "array"
+        },
+        "source": {
+          "default": "executable discovery",
+          "title": "Source",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "RuntimeInfo",
+      "type": "object"
+    },
+    "Status": {
+      "enum": [
+        "available",
+        "not_available",
+        "unsupported",
+        "unknown"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "StorageInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "default": "system drive",
+          "title": "Scope",
+          "type": "string"
+        },
+        "total_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Bytes"
+        },
+        "used_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Used Bytes"
+        },
+        "free_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Free Bytes"
+        },
+        "drive_type": {
+          "default": "unknown",
+          "title": "Drive Type",
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/Evidence"
+        }
+      },
+      "title": "StorageInfo",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "application_version": {
+      "default": "0.1.0",
+      "title": "Application Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "platform": {
+      "$ref": "#/$defs/PlatformInfo"
+    },
+    "cpu": {
+      "$ref": "#/$defs/CPUInfo"
+    },
+    "memory": {
+      "$ref": "#/$defs/MemoryInfo"
+    },
+    "gpus": {
+      "items": {
+        "$ref": "#/$defs/GPUInfo"
+      },
+      "title": "Gpus",
+      "type": "array"
+    },
+    "storage": {
+      "$ref": "#/$defs/StorageInfo"
+    },
+    "backends": {
+      "additionalProperties": {
+        "$ref": "#/$defs/BackendInfo"
+      },
+      "title": "Backends",
+      "type": "object"
+    },
+    "runtimes": {
+      "items": {
+        "$ref": "#/$defs/RuntimeInfo"
+      },
+      "title": "Runtimes",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "probes": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Probes",
+      "type": "object"
+    }
+  },
+  "required": [
+    "platform",
+    "cpu",
+    "memory",
+    "storage"
+  ],
+  "title": "HardwareScanResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

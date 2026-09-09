@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-llm-analyzer"
+dynamic = ["version"]
+description = "Offline Windows hardware analysis and explainable local LLM recommendations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["typer>=0.27.2,<0.28", "rich>=14,<15", "psutil>=7,<8", "py-cpuinfo>=9,<10", "pydantic>=2.11,<3", "platformdirs>=4,<5", "packaging>=25"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6", "ruff>=0.11", "mypy>=1.15", "types-psutil", "build>=1.2", "pyinstaller>=6.16,<7"]
+
+[project.scripts]
+llm-analyzer = "llm_analyzer.cli.app:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "llm_analyzer.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+llm_analyzer = ["data/*.json", "data/schema/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "B008"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/llm_analyzer"]
+
+[[tool.mypy.overrides]]
+module = "cpuinfo.*"
+ignore_missing_imports = true

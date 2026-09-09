@@ -1,0 +1,1482 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.09.09",
+  "models": [
+    {
+      "id": "qwen2.5-0.5b-instruct",
+      "display_name": "Qwen2.5-0.5B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 494032768,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 24,
+      "kv_heads": 2,
+      "head_dim": 64,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 415182688,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 432041824,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 428730208,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 491400032,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 522186592,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 650379104,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 675710816,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 1266425696,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/7ae557604adf67be50417f59c2c2f167def9a775/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct"
+      ],
+      "source_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-3b-instruct",
+      "display_name": "Qwen2.5-3B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 3085938688,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 36,
+      "kv_heads": 2,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 1376856480,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 1724178848,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 1997879712,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 2104932768,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 2438740384,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 2793410976,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 3616088480,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 6800646784,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/tree/7dabda4d13d513e3e842b20f0d435c732f172cbe"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/aa8e72537993ba99e69dfaafa59ed015b17504d1/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      ],
+      "source_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-7b-instruct",
+      "display_name": "Qwen2.5-7B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 7615616512,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 3015940000,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 3808391072,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 4431390848,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 4683073632,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 5444831360,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 6254198880,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 8098525408,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 15237853536,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/blob/a09a35458c702b33eeacc393d103063234e8bc28/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct"
+      ],
+      "source_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-14b-instruct",
+      "display_name": "Qwen2.5-14B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 14770033664,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 48,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 5770497600,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 7339204160,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 8517725856,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 8988110496,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 10508873376,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 12124684064,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 15701597984,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 29547716864,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF/tree/b466e1f8c07172155743e8e1307507d8a4f91fbd"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct/blob/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct"
+      ],
+      "source_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-32b-instruct",
+      "display_name": "Qwen2.5-32B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 32763876352,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 64,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 12313098784,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 15935048320,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 18640231072,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 19851336384,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 23262157568,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 26886155104,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 34820885632,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 65535971488,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GGUF/tree/a15e3cc10f8bbb2c0af6f8f1f34a32e3b060c09d"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct/blob/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct"
+      ],
+      "source_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-72b-instruct",
+      "display_name": "Qwen2.5-72B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 72706203648,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag"
+      ],
+      "context_maximum": 32768,
+      "layers": 80,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 27329259168,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 35472140224,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 41373296800,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 44010465472,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 51673983488,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 59861035808,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 77530000800,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 145925994464,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GGUF/tree/7ca3bc388f97b264c4283bc9bf1055e2abc38441"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/495f39366efef23836d0cfae4fbe635880d2be31/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct"
+      ],
+      "source_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen2.5-coder-7b-instruct",
+      "display_name": "Qwen2.5-Coder-7B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 7615616512,
+      "architecture": "qwen2",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "coding",
+        "chat"
+      ],
+      "context_maximum": 32768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 3015940032,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 3808391104,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 4431390720,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 4683073536,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 5444831232,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 6254198784,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 8098525184,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 15237853184,
+          "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/blob/c03e6d358207e414f1eca0bb1891e29f1db0e242/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct"
+      ],
+      "source_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "qwen3-4b",
+      "display_name": "Qwen3-4B",
+      "family": "Qwen3",
+      "publisher": "Qwen",
+      "parameters": 4022468096,
+      "architecture": "qwen3",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "reasoning",
+        "agents"
+      ],
+      "context_maximum": 40960,
+      "layers": 36,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 2497280256,
+          "source": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/bc640142c66e1fdd12af0bd68f40445458f3869b"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 2889513184,
+          "source": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/bc640142c66e1fdd12af0bd68f40445458f3869b"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 3306260704,
+          "source": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/bc640142c66e1fdd12af0bd68f40445458f3869b"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 4280404704,
+          "source": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/bc640142c66e1fdd12af0bd68f40445458f3869b"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-4B/blob/1cfa9a7208912126459214e8b04321603b3df60c/config.json",
+        "https://huggingface.co/Qwen/Qwen3-4B"
+      ],
+      "source_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision."
+      ]
+    },
+    {
+      "id": "nomic-embed-text-v1.5",
+      "display_name": "nomic-embed-text-v1.5",
+      "family": "Nomic BERT",
+      "publisher": "nomic-ai",
+      "parameters": 136731648,
+      "architecture": "nomic_bert",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "embeddings"
+      ],
+      "context_maximum": 8192,
+      "layers": 12,
+      "kv_heads": 12,
+      "head_dim": 64,
+      "embedding": true,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": 49361088,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": 67169408,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": 77802880,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": 84106624,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": 99588928,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": 113042528,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": 146146432,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": 274290560,
+          "source": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/0188c9bf409793f810680a5a431e7b899c46104c"
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5/blob/e9b6763023c676ca8431644204f50c2b100d9aab/config.json",
+        "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5"
+      ],
+      "source_revision": "e9b6763023c676ca8431644204f50c2b100d9aab",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision.",
+        "Use task prefixes from the model card; embeddings do not generate chat responses."
+      ]
+    },
+    {
+      "id": "qwen2.5-vl-7b-instruct",
+      "display_name": "Qwen2.5-VL-7B-Instruct",
+      "family": "Qwen2.5",
+      "publisher": "Qwen",
+      "parameters": 8292166656,
+      "architecture": "qwen2_5_vl",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "capabilities": [
+        "multimodal",
+        "chat"
+      ],
+      "context_maximum": 32768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "embedding": false,
+      "generic": false,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": "https://ollama.com/library/qwen2.5vl:7b-q4_K_M"
+        }
+      ],
+      "runtime_support": [
+        "ollama"
+      ],
+      "runtime_minimum_versions": {
+        "ollama": "0.7.0"
+      },
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/blob/cc594898137f460bfe9f0759e9844b3ce807cfb5/config.json",
+        "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+        "https://ollama.com/library/qwen2.5vl:7b-q4_K_M"
+      ],
+      "source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "high",
+      "notes": [
+        "Use this exact publisher artifact; similarly named mutable runtime tags may refer to a different model revision.",
+        "Vision configuration is included for explicit uncertainty analysis; image memory has not been calibrated."
+      ]
+    },
+    {
+      "id": "generic-1b",
+      "display_name": "Generic 1B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 1000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-3b",
+      "display_name": "Generic 3B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 3000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-8b",
+      "display_name": "Generic 8B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 8000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-14b",
+      "display_name": "Generic 14B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 14000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-20b",
+      "display_name": "Generic 20B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 20000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-32b",
+      "display_name": "Generic 32B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 32000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    },
+    {
+      "id": "generic-70b",
+      "display_name": "Generic 70B dense capacity estimate",
+      "family": "Generic",
+      "publisher": "Hypothetical profile",
+      "parameters": 70000000000,
+      "architecture": "generic_dense",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning"
+      ],
+      "context_maximum": 32768,
+      "layers": null,
+      "kv_heads": null,
+      "head_dim": null,
+      "embedding": false,
+      "generic": true,
+      "format": "gguf",
+      "quantizations": [
+        {
+          "name": "Q2_K",
+          "bits_estimate": 2.625,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q3_K_M",
+          "bits_estimate": 3.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_0",
+          "bits_estimate": 4.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q4_K_M",
+          "bits_estimate": 4.85,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q5_K_M",
+          "bits_estimate": 5.7,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q6_K",
+          "bits_estimate": 6.56,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "Q8_0",
+          "bits_estimate": 8.5,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "FP16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        },
+        {
+          "name": "BF16",
+          "bits_estimate": 16.0,
+          "file_size_bytes": null,
+          "source": null
+        }
+      ],
+      "runtime_support": [
+        "ollama",
+        "llama.cpp"
+      ],
+      "runtime_minimum_versions": {},
+      "sources": [
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "source_revision": null,
+      "last_verified_at": "2026-09-09",
+      "metadata_confidence": "low",
+      "notes": [
+        "Sizes and context are illustrative scenarios; no specific artifact or capability is verified."
+      ]
+    }
+  ]
+}

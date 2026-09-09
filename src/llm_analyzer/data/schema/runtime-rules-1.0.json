@@ -1,0 +1,205 @@
+{
+  "$defs": {
+    "CudaRule": {
+      "additionalProperties": false,
+      "properties": {
+        "minimum_compute_capability": {
+          "minimum": 0,
+          "title": "Minimum Compute Capability",
+          "type": "number"
+        },
+        "minimum_driver_major": {
+          "minimum": 0,
+          "title": "Minimum Driver Major",
+          "type": "integer"
+        },
+        "legacy_compute_below": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Legacy Compute Below"
+        },
+        "legacy_minimum_driver_major": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Legacy Minimum Driver Major"
+        }
+      },
+      "required": [
+        "minimum_compute_capability",
+        "minimum_driver_major"
+      ],
+      "title": "CudaRule",
+      "type": "object"
+    },
+    "RuntimeRule": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "platforms": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Platforms",
+          "type": "array"
+        },
+        "architectures": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Architectures",
+          "type": "array"
+        },
+        "model_architectures": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Model Architectures",
+          "type": "array"
+        },
+        "formats": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Formats",
+          "type": "array"
+        },
+        "quantizations": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Quantizations",
+          "type": "array"
+        },
+        "backends": {
+          "items": {
+            "enum": [
+              "cpu",
+              "cuda",
+              "vulkan",
+              "hip",
+              "directml"
+            ],
+            "type": "string"
+          },
+          "title": "Backends",
+          "type": "array"
+        },
+        "partial_offload": {
+          "title": "Partial Offload",
+          "type": "boolean"
+        },
+        "required_cpu_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Cpu Flags",
+          "type": "array"
+        },
+        "minimum_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Version"
+        },
+        "cuda": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CudaRule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "last_verified_at": {
+          "format": "date",
+          "title": "Last Verified At",
+          "type": "string"
+        },
+        "note": {
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "platforms",
+        "architectures",
+        "model_architectures",
+        "formats",
+        "quantizations",
+        "backends",
+        "partial_offload",
+        "source",
+        "last_verified_at",
+        "note"
+      ],
+      "title": "RuntimeRule",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "rules_version": {
+      "title": "Rules Version",
+      "type": "string"
+    },
+    "runtimes": {
+      "items": {
+        "$ref": "#/$defs/RuntimeRule"
+      },
+      "minItems": 1,
+      "title": "Runtimes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "rules_version",
+    "runtimes"
+  ],
+  "title": "RuntimeRules",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

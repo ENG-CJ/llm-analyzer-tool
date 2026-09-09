@@ -1,0 +1,301 @@
+{
+  "$defs": {
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "ModelDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "pattern": "^[a-z0-9][a-z0-9._-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "display_name": {
+          "title": "Display Name",
+          "type": "string"
+        },
+        "family": {
+          "title": "Family",
+          "type": "string"
+        },
+        "publisher": {
+          "title": "Publisher",
+          "type": "string"
+        },
+        "parameters": {
+          "exclusiveMinimum": 0,
+          "maximum": 10000000000000,
+          "title": "Parameters",
+          "type": "integer"
+        },
+        "architecture": {
+          "title": "Architecture",
+          "type": "string"
+        },
+        "modalities": {
+          "items": {
+            "enum": [
+              "text",
+              "image"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Modalities",
+          "type": "array"
+        },
+        "capabilities": {
+          "items": {
+            "$ref": "#/$defs/UseCase"
+          },
+          "minItems": 1,
+          "title": "Capabilities",
+          "type": "array"
+        },
+        "context_maximum": {
+          "maximum": 1048576,
+          "minimum": 128,
+          "title": "Context Maximum",
+          "type": "integer"
+        },
+        "layers": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1000,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layers"
+        },
+        "kv_heads": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1024,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kv Heads"
+        },
+        "head_dim": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 4096,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Head Dim"
+        },
+        "embedding": {
+          "default": false,
+          "title": "Embedding",
+          "type": "boolean"
+        },
+        "generic": {
+          "default": false,
+          "title": "Generic",
+          "type": "boolean"
+        },
+        "format": {
+          "const": "gguf",
+          "default": "gguf",
+          "title": "Format",
+          "type": "string"
+        },
+        "quantizations": {
+          "items": {
+            "$ref": "#/$defs/QuantizationDefinition"
+          },
+          "minItems": 1,
+          "title": "Quantizations",
+          "type": "array"
+        },
+        "runtime_support": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Runtime Support",
+          "type": "array"
+        },
+        "runtime_minimum_versions": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Runtime Minimum Versions",
+          "type": "object"
+        },
+        "sources": {
+          "items": {
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "source_revision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Revision"
+        },
+        "last_verified_at": {
+          "format": "date",
+          "title": "Last Verified At",
+          "type": "string"
+        },
+        "metadata_confidence": {
+          "$ref": "#/$defs/Confidence",
+          "default": "medium"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "display_name",
+        "family",
+        "publisher",
+        "parameters",
+        "architecture",
+        "modalities",
+        "capabilities",
+        "context_maximum",
+        "quantizations",
+        "runtime_support",
+        "sources",
+        "last_verified_at"
+      ],
+      "title": "ModelDefinition",
+      "type": "object"
+    },
+    "QuantizationDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "bits_estimate": {
+          "exclusiveMinimum": 0,
+          "maximum": 32,
+          "title": "Bits Estimate",
+          "type": "number"
+        },
+        "file_size_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Size Bytes"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        }
+      },
+      "required": [
+        "name",
+        "bits_estimate"
+      ],
+      "title": "QuantizationDefinition",
+      "type": "object"
+    },
+    "UseCase": {
+      "enum": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning",
+        "embeddings",
+        "multimodal"
+      ],
+      "title": "UseCase",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "catalog_version": {
+      "title": "Catalog Version",
+      "type": "string"
+    },
+    "models": {
+      "items": {
+        "$ref": "#/$defs/ModelDefinition"
+      },
+      "minItems": 1,
+      "title": "Models",
+      "type": "array"
+    }
+  },
+  "required": [
+    "catalog_version",
+    "models"
+  ],
+  "title": "Catalog",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

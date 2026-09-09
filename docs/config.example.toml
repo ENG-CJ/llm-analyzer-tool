@@ -1,0 +1,14 @@
+# Copy to the config path shown by `llm-analyzer config show`.
+color = true
+progress = true
+default_report_format = "markdown"
+default_use_case = "chat"
+default_priority = "balanced"
+default_context = 4096
+top_recommendations = 5
+ram_headroom_fraction = 0.15
+vram_headroom_fraction = 0.10
+minimum_ram_reserve_gib = 1.0
+runtime_overhead_gib = 0.5
+working_buffer_fraction = 0.10
+storage_multiplier = 1.2

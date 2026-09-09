@@ -1,0 +1,491 @@
+{
+  "$defs": {
+    "AnalysisRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "use_case": {
+          "$ref": "#/$defs/UseCase",
+          "default": "chat"
+        },
+        "priority": {
+          "$ref": "#/$defs/Priority",
+          "default": "balanced"
+        },
+        "context": {
+          "default": 4096,
+          "maximum": 1048576,
+          "minimum": 128,
+          "title": "Context",
+          "type": "integer"
+        },
+        "top": {
+          "default": 5,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Top",
+          "type": "integer"
+        },
+        "runtime": {
+          "default": "auto",
+          "title": "Runtime",
+          "type": "string"
+        },
+        "model_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Id"
+        },
+        "quant": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quant"
+        }
+      },
+      "title": "AnalysisRequest",
+      "type": "object"
+    },
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "Execution": {
+      "enum": [
+        "full_gpu",
+        "hybrid",
+        "cpu",
+        "undetermined"
+      ],
+      "title": "Execution",
+      "type": "string"
+    },
+    "Fit": {
+      "enum": [
+        "EXCELLENT",
+        "GOOD",
+        "BORDERLINE",
+        "NOT_RECOMMENDED",
+        "UNKNOWN"
+      ],
+      "title": "Fit",
+      "type": "string"
+    },
+    "MemoryEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "weights_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Weights Bytes",
+          "type": "integer"
+        },
+        "kv_cache_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Kv Cache Bytes",
+          "type": "integer"
+        },
+        "runtime_overhead_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Runtime Overhead Bytes",
+          "type": "integer"
+        },
+        "working_buffers_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Working Buffers Bytes",
+          "type": "integer"
+        },
+        "total_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Total Bytes",
+          "type": "integer"
+        },
+        "storage_required_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Storage Required Bytes",
+          "type": "integer"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "weights_bytes",
+        "kv_cache_bytes",
+        "runtime_overhead_bytes",
+        "working_buffers_bytes",
+        "total_bytes",
+        "storage_required_bytes",
+        "confidence",
+        "assumptions"
+      ],
+      "title": "MemoryEstimate",
+      "type": "object"
+    },
+    "ModelRecommendation": {
+      "additionalProperties": false,
+      "properties": {
+        "model_id": {
+          "title": "Model Id",
+          "type": "string"
+        },
+        "display_name": {
+          "title": "Display Name",
+          "type": "string"
+        },
+        "parameters": {
+          "title": "Parameters",
+          "type": "integer"
+        },
+        "quantization": {
+          "title": "Quantization",
+          "type": "string"
+        },
+        "bits_estimate": {
+          "title": "Bits Estimate",
+          "type": "number"
+        },
+        "generic": {
+          "default": false,
+          "title": "Generic",
+          "type": "boolean"
+        },
+        "context": {
+          "title": "Context",
+          "type": "integer"
+        },
+        "runtime": {
+          "title": "Runtime",
+          "type": "string"
+        },
+        "runtime_installed": {
+          "title": "Runtime Installed",
+          "type": "boolean"
+        },
+        "runtime_compatibility": {
+          "default": "conditional",
+          "enum": [
+            "conditional",
+            "unsupported",
+            "unknown"
+          ],
+          "title": "Runtime Compatibility",
+          "type": "string"
+        },
+        "fit": {
+          "$ref": "#/$defs/Fit"
+        },
+        "execution": {
+          "$ref": "#/$defs/Execution"
+        },
+        "gpu_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gpu Index"
+        },
+        "gpu_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gpu Name"
+        },
+        "backend": {
+          "default": "cpu",
+          "title": "Backend",
+          "type": "string"
+        },
+        "memory": {
+          "$ref": "#/$defs/MemoryEstimate"
+        },
+        "safe_ram_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Safe Ram Bytes"
+        },
+        "safe_vram_bytes": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Safe Vram Bytes"
+        },
+        "estimated_host_bytes": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Estimated Host Bytes",
+          "type": "integer"
+        },
+        "estimated_device_bytes": {
+          "default": 0,
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Estimated Device Bytes",
+          "type": "integer"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "performance_class": {
+          "default": "unknown",
+          "enum": [
+            "fast",
+            "moderate",
+            "slow",
+            "very_slow",
+            "unknown"
+          ],
+          "title": "Performance Class",
+          "type": "string"
+        },
+        "performance_confidence": {
+          "$ref": "#/$defs/Confidence",
+          "default": "low"
+        },
+        "reasons": {
+          "items": {
+            "$ref": "#/$defs/RecommendationReason"
+          },
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "model_id",
+        "display_name",
+        "parameters",
+        "quantization",
+        "bits_estimate",
+        "context",
+        "runtime",
+        "runtime_installed",
+        "fit",
+        "execution",
+        "memory",
+        "safe_ram_bytes",
+        "estimated_host_bytes",
+        "confidence",
+        "reasons"
+      ],
+      "title": "ModelRecommendation",
+      "type": "object"
+    },
+    "Priority": {
+      "enum": [
+        "balanced",
+        "quality",
+        "low-memory",
+        "speed"
+      ],
+      "title": "Priority",
+      "type": "string"
+    },
+    "RecommendationReason": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "level": {
+          "enum": [
+            "pass",
+            "warning",
+            "fail",
+            "unknown",
+            "info"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "level",
+        "message"
+      ],
+      "title": "RecommendationReason",
+      "type": "object"
+    },
+    "UseCase": {
+      "enum": [
+        "chat",
+        "rag",
+        "coding",
+        "agents",
+        "reasoning",
+        "embeddings",
+        "multimodal"
+      ],
+      "title": "UseCase",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "application_version": {
+      "default": "0.1.0",
+      "title": "Application Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/AnalysisRequest"
+    },
+    "catalog_version": {
+      "title": "Catalog Version",
+      "type": "string"
+    },
+    "catalog_sha256": {
+      "title": "Catalog Sha256",
+      "type": "string"
+    },
+    "rules_version": {
+      "title": "Rules Version",
+      "type": "string"
+    },
+    "rules_sha256": {
+      "title": "Rules Sha256",
+      "type": "string"
+    },
+    "recommendations": {
+      "items": {
+        "$ref": "#/$defs/ModelRecommendation"
+      },
+      "title": "Recommendations",
+      "type": "array"
+    },
+    "rejected": {
+      "items": {
+        "$ref": "#/$defs/ModelRecommendation"
+      },
+      "title": "Rejected",
+      "type": "array"
+    },
+    "unknown": {
+      "items": {
+        "$ref": "#/$defs/ModelRecommendation"
+      },
+      "title": "Unknown",
+      "type": "array"
+    },
+    "generic_capacity": {
+      "items": {
+        "$ref": "#/$defs/ModelRecommendation"
+      },
+      "title": "Generic Capacity",
+      "type": "array"
+    },
+    "evaluated_configurations": {
+      "items": {
+        "$ref": "#/$defs/ModelRecommendation"
+      },
+      "title": "Evaluated Configurations",
+      "type": "array"
+    },
+    "capability_summary": {
+      "title": "Capability Summary",
+      "type": "string"
+    },
+    "capability_reason": {
+      "title": "Capability Reason",
+      "type": "string"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request",
+    "catalog_version",
+    "catalog_sha256",
+    "rules_version",
+    "rules_sha256",
+    "recommendations",
+    "rejected",
+    "unknown",
+    "generic_capacity",
+    "evaluated_configurations",
+    "capability_summary",
+    "capability_reason",
+    "warnings"
+  ],
+  "title": "RecommendationResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

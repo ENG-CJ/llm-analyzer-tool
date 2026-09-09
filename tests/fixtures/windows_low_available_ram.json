@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "application_version": "0.1.0",
+  "generated_at": "2026-09-09T00:00:00Z",
+  "platform": {
+    "os": "Windows",
+    "version": "10.0",
+    "build": "26100",
+    "edition": "Windows 11 (synthetic)",
+    "architecture": "x86_64",
+    "machine_architecture": "AMD64",
+    "manufacturer": null,
+    "model": null
+  },
+  "cpu": {
+    "vendor": "Fixture",
+    "brand": "Synthetic x64 CPU",
+    "architecture": "x86_64",
+    "physical_cores": 8,
+    "logical_cores": 16,
+    "flags": [
+      "avx",
+      "avx2",
+      "fma",
+      "sse2"
+    ],
+    "flags_known": true,
+    "frequency_mhz": null,
+    "evidence": {
+      "flags": {
+        "source": "synthetic fixture",
+        "confidence": "high",
+        "status": "available",
+        "note": ""
+      }
+    }
+  },
+  "memory": {
+    "total_bytes": 68719476736,
+    "available_bytes": 536870912,
+    "used_bytes": null,
+    "utilization_percent": null,
+    "swap_total_bytes": null,
+    "swap_free_bytes": null,
+    "evidence": {
+      "source": "unknown",
+      "confidence": "unknown",
+      "status": "unknown",
+      "note": ""
+    }
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "vendor": "NVIDIA",
+      "name": "Synthetic NVIDIA 24 GiB",
+      "dedicated_vram_bytes": 25769803776,
+      "free_vram_bytes": 23192823398,
+      "used_vram_bytes": 2576980377,
+      "shared_memory_bytes": null,
+      "driver_version": "580.88",
+      "compute_capability": 8.6,
+      "gpu_type": "discrete",
+      "evidence": {
+        "dedicated_vram_bytes": {
+          "source": "synthetic fixture",
+          "confidence": "high",
+          "status": "available",
+          "note": ""
+        },
+        "free_vram_bytes": {
+          "source": "synthetic fixture",
+          "confidence": "high",
+          "status": "available",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "storage": {
+    "scope": "system drive",
+    "total_bytes": 549755813888,
+    "used_bytes": 274877906944,
+    "free_bytes": 274877906944,
+    "drive_type": "unknown",
+    "evidence": {
+      "source": "synthetic fixture",
+      "confidence": "high",
+      "status": "available",
+      "note": ""
+    }
+  },
+  "backends": {
+    "cuda_driver": {
+      "status": "available",
+      "version": "12.0",
+      "source": "synthetic driver API",
+      "confidence": "high",
+      "note": ""
+    },
+    "cuda_toolkit": {
+      "status": "not_available",
+      "version": null,
+      "source": "not probed",
+      "confidence": "unknown",
+      "note": ""
+    },
+    "vulkan": {
+      "status": "unknown",
+      "version": null,
+      "source": "not probed",
+      "confidence": "unknown",
+      "note": ""
+    },
+    "hip": {
+      "status": "unknown",
+      "version": null,
+      "source": "not probed",
+      "confidence": "unknown",
+      "note": ""
+    },
+    "directml": {
+      "status": "unknown",
+      "version": null,
+      "source": "not probed",
+      "confidence": "unknown",
+      "note": ""
+    }
+  },
+  "runtimes": [
+    {
+      "name": "ollama",
+      "installed": true,
+      "version": "1.0.0",
+      "status": "available",
+      "backends": [],
+      "source": "executable discovery",
+      "note": ""
+    },
+    {
+      "name": "llama.cpp",
+      "installed": false,
+      "version": null,
+      "status": "not_available",
+      "backends": [],
+      "source": "executable discovery",
+      "note": ""
+    }
+  ],
+  "warnings": [],
+  "probes": {}
+}

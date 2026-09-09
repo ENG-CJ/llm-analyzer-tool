@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "rules_version": "2026.09.09",
+  "runtimes": [
+    {
+      "name": "ollama",
+      "platforms": [
+        "windows"
+      ],
+      "architectures": [
+        "x86_64"
+      ],
+      "model_architectures": [
+        "qwen2",
+        "qwen3",
+        "nomic_bert",
+        "qwen2_5_vl"
+      ],
+      "formats": [
+        "gguf"
+      ],
+      "quantizations": [
+        "Q2_K",
+        "Q3_K_M",
+        "Q4_0",
+        "Q4_K_M",
+        "Q5_K_M",
+        "Q6_K",
+        "Q8_0",
+        "FP16",
+        "BF16"
+      ],
+      "backends": [
+        "cpu",
+        "cuda",
+        "vulkan"
+      ],
+      "partial_offload": true,
+      "required_cpu_flags": [
+        "avx2"
+      ],
+      "minimum_version": null,
+      "cuda": {
+        "minimum_compute_capability": 5.0,
+        "minimum_driver_major": 550,
+        "legacy_compute_below": 6.3,
+        "legacy_minimum_driver_major": 570
+      },
+      "source": "https://docs.ollama.com/gpu",
+      "last_verified_at": "2026-09-09",
+      "note": "Targets an AVX2-capable current Windows x64 build. This is a conservative analyzer policy; custom baseline CPU builds may work on older CPUs. CUDA recipe eligibility is established only for Ollama's documented device/driver matrix. Other backend builds require manual validation."
+    },
+    {
+      "name": "llama.cpp",
+      "platforms": [
+        "windows"
+      ],
+      "architectures": [
+        "x86_64"
+      ],
+      "model_architectures": [
+        "qwen2",
+        "qwen3",
+        "nomic_bert"
+      ],
+      "formats": [
+        "gguf"
+      ],
+      "quantizations": [
+        "Q2_K",
+        "Q3_K_M",
+        "Q4_0",
+        "Q4_K_M",
+        "Q5_K_M",
+        "Q6_K",
+        "Q8_0",
+        "FP16",
+        "BF16"
+      ],
+      "backends": [
+        "cpu",
+        "cuda",
+        "vulkan"
+      ],
+      "partial_offload": true,
+      "required_cpu_flags": [
+        "avx2"
+      ],
+      "minimum_version": null,
+      "cuda": null,
+      "source": "https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md",
+      "last_verified_at": "2026-09-09",
+      "note": "Targets an AVX2-capable current Windows x64 build. This is a conservative analyzer policy; custom baseline CPU builds may work on older CPUs. CUDA recipe eligibility is established only for Ollama's documented device/driver matrix. Other backend builds require manual validation."
+    }
+  ]
+}
