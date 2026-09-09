@@ -1,5 +1,7 @@
 # Local LLM Analyzer
 
+![Local LLM Analyzer cover](cover.png)
+
 An offline, deterministic CLI that scans Windows 10/11 x64 hardware and explains which local model configurations are plausible. No LLM, model download, account, administrator access, or installed inference runtime is required.
 
 Local LLM Analyzer performs hardware analysis locally and does not upload your hardware profile by default. Version 1 has no upload functionality or telemetry.
