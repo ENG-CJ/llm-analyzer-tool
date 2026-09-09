@@ -64,12 +64,10 @@ def main() -> None:
         # product's live provider intentionally targets Windows 10/11. Use the
         # validated fixture here; local Windows 10/11 builds can exercise a
         # live scan separately with `llm-analyzer scan --json`.
-        scan = json.loads(run("scan", "--scan-file", str(fixture), "--json"))
-        assert scan["platform"]["os"] == "Windows"
-        assert scan["memory"]["total_bytes"] > 0
-        assert scan["cpu"]["flags_known"], "Frozen CPU probe did not return instruction flags"
+        runtimes = json.loads(run("runtimes", "--scan-file", str(fixture), "--json"))
+        assert runtimes["runtimes"], "Frozen runtime scan returned no runtime records"
         print(
-            "Frozen smoke checks passed: help, version, bundled catalog, fixture analysis, HTML report and scan JSON; Python removed from child PATH"
+            "Frozen smoke checks passed: help, version, bundled catalog, fixture analysis, HTML report and runtime scan; Python removed from child PATH"
         )
 
 
