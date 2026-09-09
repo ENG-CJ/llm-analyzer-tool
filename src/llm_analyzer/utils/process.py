@@ -28,7 +28,7 @@ def run_command(args: list[str], timeout: float = 8) -> CommandResult:
             capture_output=True,
             timeout=timeout,
             shell=False,
-            creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,  # type: ignore[attr-defined]
+            creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,  # type: ignore[attr-defined, unused-ignore]
         )
         if result.returncode:
             logger.warning(

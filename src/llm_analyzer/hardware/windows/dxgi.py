@@ -31,9 +31,9 @@ def enumerate_dxgi() -> list[GPUInfo]:
 
     def method(pointer: ct.c_void_p, index: int, result: Any, *args: Any) -> Any:
         table = ct.cast(pointer, ct.POINTER(ct.POINTER(ct.c_void_p))).contents
-        return ct.WINFUNCTYPE(result, ct.c_void_p, *args)(table[index])  # type: ignore[attr-defined]
+        return ct.WINFUNCTYPE(result, ct.c_void_p, *args)(table[index])  # type: ignore[attr-defined, unused-ignore]
 
-    dll = ct.WinDLL("dxgi.dll", winmode=0x800)  # type: ignore[attr-defined]
+    dll = ct.WinDLL("dxgi.dll", winmode=0x800)  # type: ignore[attr-defined, unused-ignore]
     factory = ct.c_void_p()
     iid = GUID.from_buffer_copy(uuid.UUID("770aae78-f26f-4dba-a829-253c83d1b387").bytes_le)
     create = dll.CreateDXGIFactory1

@@ -13,7 +13,7 @@ def backend_info() -> dict[str, BackendInfo]:
         for name in ("cuda_driver", "cuda_toolkit", "vulkan", "directml", "hip")
     }
     try:
-        driver = ct.WinDLL("nvcuda.dll", winmode=0x800)  # type: ignore[attr-defined]
+        driver = ct.WinDLL("nvcuda.dll", winmode=0x800)  # type: ignore[attr-defined, unused-ignore]
         driver.cuInit.argtypes = [ct.c_uint]
         driver.cuInit.restype = ct.c_int
         driver.cuDriverGetVersion.argtypes = [ct.POINTER(ct.c_int)]
