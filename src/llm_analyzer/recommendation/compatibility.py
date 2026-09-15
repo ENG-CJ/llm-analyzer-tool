@@ -129,7 +129,7 @@ def check_compatibility(
                 f"Install a current compatible {rule.name} build to use this configuration; nothing is installed automatically",
             )
         )
-    elif runtime.status != Status.AVAILABLE:
+    elif runtime.status != Status.AVAILABLE and minimum:
         reasons.append(
             reason(
                 "runtime_health",
