@@ -164,9 +164,10 @@ def test_explicit_system_benchmark():
     assert value["inference_tokens_per_second"] is None
 
 
-def test_unsupported_platform(monkeypatch):
+def test_linux_platform_supported(monkeypatch):
     monkeypatch.setattr("llm_analyzer.hardware.scanner.platform.system", lambda: "Linux")
-    assert runner.invoke(app, ["scan", "--json"]).exit_code == 3
+    result = runner.invoke(app, ["scan", "--json"])
+    assert result.exit_code == 0, result.output
 
 
 def test_version():

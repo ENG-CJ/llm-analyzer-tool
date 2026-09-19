@@ -5,7 +5,8 @@
     {
       "name": "ollama",
       "platforms": [
-        "windows"
+        "windows",
+        "linux"
       ],
       "architectures": [
         "x86_64"
